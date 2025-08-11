@@ -1,0 +1,2 @@
+#to check api request limit
+https://weatherstack.com/dashboard?access_key_status=success

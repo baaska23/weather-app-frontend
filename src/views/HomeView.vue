@@ -1,5 +1,5 @@
 <script>
-import WeatherGeneral from "@/components/icons/WeatherGeneral.vue";
+import WeatherGeneral from "@/components/WeatherGeneral.vue";
 import {defineComponent} from "vue";
 
 export default defineComponent({

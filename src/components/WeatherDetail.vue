@@ -2,7 +2,7 @@
 import {weatherService} from "@/services/weatherService.js";
 import router from "@/router/router.js";
 export default {
-  name: 'WeatherGeneral',
+  name: 'WeatherDetail',
   data() {
     return {
       weather: {},
@@ -20,24 +20,31 @@ export default {
         console.log("The weather data is: ", this.weather);
       }
     },
-    goToDetail() {
-      router.push({name: 'Detail'});
+    goBackToHome() {
+      router.push({name: 'Home'});
     }
   }
 }
 </script>
 <template>
-  <div class="weather-general">
-    <h4>Weather</h4>
-    <button @click="goToDetail">Go to detail page</button>
-    <input type="search" placeholder="Search for a city">
+  <div class="detail">
+    <h4>Weather Detail</h4>
+    <button @click="goBackToHome">Go back to home page</button>
     <div class="weather-data">
-      <section class="city-preview">
+      <section class="city-detail">
         <p>Location: {{weather.request?.query}}</p>
         <p>Current: {{weather.current?.temperature}}°C</p>
-        <p>Description: {{weather.current?.weather_descriptions}}</p>
+        <p>Feels like: {{weather.current?.feelslike}}</p>
         <p>Sunrise and sunset: {{weather.current?.astro.sunrise}} - {{weather.current?.astro.sunset}}</p>
         <p>Time: {{weather.location?.localtime}}</p>
+      </section>
+      <section>
+        <p>Latitude and longitude: {{weather.location?.lat}} - {{weather.location?.lon}}</p>
+        <p>Image: {{weather.current?.weather_icons}}</p>
+        <p>Air quality: {{weather.current?.air_quality.co}}</p>
+        <p>Humidity: {{weather.current?.humidity}}</p>
+        <p>Pressure: {{weather.current?.pressure}}</p>
+        <p>Visibility: {{weather.current?.visibility}}</p>
       </section>
     </div>
   </div>

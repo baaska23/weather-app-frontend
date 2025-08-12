@@ -1,11 +1,9 @@
 <script>
 import WeatherGeneral from "@/components/WeatherGeneral.vue";
-import {defineComponent} from "vue";
 
-export default defineComponent({
+export default{
   components: {WeatherGeneral}
-})
-
+}
 </script>
 <template>
   <div class="home-page">

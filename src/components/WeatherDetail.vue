@@ -6,7 +6,7 @@ export default {
   data() {
     return {
       weather: {},
-      serviceEnabled: false,
+      serviceEnabled: true,
     }
   },
   async mounted() {
@@ -15,7 +15,7 @@ export default {
   methods: {
     async loadData() {
       if (this.serviceEnabled) {
-        const response = await weatherService.getWeatherDataFromWS("New York");
+        const response = await weatherService.getWeatherDataFromWS("Tokyo");
         this.weather = response.data;
         console.log("The weather data is: ", this.weather);
       }
